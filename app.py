@@ -37,4 +37,7 @@ def flag():
         return jsonify({'flag': 'Incorrect input'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
+    # Use the port assigned by Render
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
